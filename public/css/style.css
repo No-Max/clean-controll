@@ -1,0 +1,246 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-size: 20px;	
+	font-family: "Calibri";
+}
+
+.wrap{		
+	margin: 0 auto;
+	max-width: 600px;
+	margin: 0 auto;
+	position: relative;
+}
+select{
+	border:  2px solid #4F81BD;	
+	padding: 0 10px;
+	height: 40px;
+	border-radius: 4px;
+	background-color: #ccc;
+	margin-left: 10px;
+}
+select option{
+	font-size: 20px;
+}
+header{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: flex-end;
+	height: 50px;
+}
+header button{
+	padding: 0 20px;
+	height: 40px;
+	font-size: 20px;
+	margin-right: 10px;
+	border:  2px solid #4F81BD;	
+	background-color: #ccc;
+	border-radius: 4px;
+}
+header button.active{
+	background: #4F81BD;
+	color: #fff;
+}
+content{
+	max-height: 800px;
+	height: calc(100vh - 100px);
+	display: block;
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+content img{
+	max-width: 100%;
+	max-height: 100%;
+	height: auto
+}
+.map{
+	width: 100%;
+	height: 100%;
+}
+.points{
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	position: absolute;
+}
+.point{
+	position: absolute;
+	padding: 5px 10px;
+	font-weight: bold;
+	font-size: 16px;
+	cursor: pointer;
+	background-color: #ccc;
+	text-align: center;
+}
+.point.active{
+	animation: infinite pulse .2s ease;
+}
+.point.green{
+	background-color: #92D050;
+}
+.point.red{
+	background-color: #FF0000;
+}
+.point.yellow{
+	background-color: #FFCD19;
+}
+
+
+@keyframes pulse {
+	0% {transform: rotate(3deg);}
+	50% {transform: rotate(-3deg);} 
+	100% {transform: rotate(3deg);}
+}
+.modals-container{
+	z-index: 3;	
+	position: fixed;
+	top: 0;	
+	left: 0;	
+	width: 100%;	
+	height: 100%;	 
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;	
+	-ms-align-items: center;
+	align-items: center;	
+	justify-content: center;
+	background-color: rgba(0,0,0,0.7);
+}
+.modals-container.hide{
+	display: none;
+}
+#loading{
+	z-index: 11;
+}
+.modal{
+	display: block;	
+	padding: 10px;	
+	margin: 10px;	
+	background-color: #4F81BD;		
+	max-width: 100%;
+	max-height: 100%;
+	overflow: auto;
+
+}
+.modal .title{
+	font-size: 20px;	
+	font-weight: bold;	
+	text-align: center;	
+	color: #fff;
+}
+.modal .description {
+	font-size: 18px;	
+}
+.modal .description.center{
+	font-size: 18px;	
+	text-align: center;
+}
+
+.modal .buttons{
+	border-top: 1px solid #fff;
+	padding-top: 10px;
+	margin-top: 10px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: space-around;
+}
+.modal .buttons.right{
+	border-bottom: 1px solid #fff;
+	padding-top: 0;
+	border-top: 0;
+	padding-bottom: 10px;
+	margin-top: 10px;
+	justify-content: flex-end;
+}
+.modal .buttons.center{
+	justify-content: center;
+}
+.modal .button{
+	border-radius: 4px;
+	border: none;
+	padding: 7px 15px;	
+	margin: 0 10px;
+	border:  2px solid #4F81BD;	
+	background-color: #ccc;
+	border-radius: 4px;
+}
+.modal .fields input[type="text"], .modal .fields textarea{
+	display: block;	
+	width: calc(100% - 20px);
+	border: none;
+	padding: 10px;
+	margin-bottom: 10px;		
+}
+.modal label{
+	font-size: 16px;
+	display: block;
+	padding: 5px 0;	
+}
+.table{
+	background-color: #fff;
+	width: 100%;
+	border: 0;
+	border-collapse: collapse;
+}
+
+.table td strong{
+	font-size: 16px;
+}
+.table tr:nth-child(2n+1){
+	background-color: #eee;
+}
+.table td{
+	padding: 5px;
+	text-align: left;
+	font-size: 16px;
+	vertical-align: middle;
+	margin: 0;
+	border-top: 1px solid #ccc;
+}
+.table [type="checkbox"]{
+	margin: 5px;
+}
+.table label{
+	display: block;
+}
+
+.dynamic.green{
+	color: #92D050;
+}
+.dynamic.red{
+	color: #FF0000;
+}
+.dynamic.yellow{
+	color: #FFCD19;
+}
+footer{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 50px;
+}
+footer button{
+	border-radius: 4px;
+	border:  2px solid #4F81BD;	
+	background-color: #ccc;
+	font-size: 	17px;
+	font-weight: bold;
+	padding: 5px 10px;
+}
+footer button.active{
+	background-color: green;
+	color: #fff;
+}
