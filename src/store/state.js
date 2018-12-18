@@ -5,7 +5,7 @@ export default {
         pest_map: {},
         pest_controll_type: {},
         pest_point: {},
-        pest_controll_limits: {}
+        pest_controll_limits: {},
     },
     modalInfo: {},
     failedQueries: {},
@@ -14,11 +14,15 @@ export default {
         status: 'success',
         text: 'Successfully saved'
     },
+    activePoint: {},
     active: {
         userId: 1,
         mapId: 1,
         movePoints: false,
         loading: false,
-        addPoint: false
-    }
+        addPoint: false,
+        editPoint: false,
+        history: false
+    },
+    maxHistoryResults: 10
 }

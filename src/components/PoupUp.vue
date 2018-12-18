@@ -25,6 +25,7 @@ export default {
         font-size: 18px;
         color: #fff;
         position: absolute;
+        z-index: 5;
     }
     #poupUp.success{
         background-color: green;

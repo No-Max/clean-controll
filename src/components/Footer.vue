@@ -10,8 +10,6 @@
 </template>
 
 <script>
-import api from '../api'
-
 export default {
     name: 'Footer',
     data:() => {
@@ -34,7 +32,7 @@ export default {
         },
         addPoint(){
             if(!this.isControllTypeEmpty){
-                api.getTable('pest_controll_type');
+                this.$store.dispatch('getRows', {table: 'pest_controll_type'});
             }
             this.$store.dispatch('activity', {
                 name: 'addPoint',

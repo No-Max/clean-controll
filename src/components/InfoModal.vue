@@ -1,5 +1,5 @@
 <template>
-  <div id="confirmDeletion" v-bind:class="{hide:!info.active}" class="modals-container">
+  <div v-bind:class="{hide:!info.active}" class="modals-container info-modals">
     <div class="modal">	
       <div class="title">	
         {{ info.title }}

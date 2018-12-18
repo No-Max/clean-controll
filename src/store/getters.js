@@ -1,20 +1,19 @@
 export default {
     getActiveMapSrc: (state) => {
-        for (const map in state.tables.pest_map._items) {
-            if (state.tables.pest_map._items[map].id == state.active.mapId) {
-                return state.tables.pest_map._items[map].Filenname;
+        for (const key in state.tables.pest_map._items) {
+            if (state.tables.pest_map._items[key].id == state.active.mapId) {
+                return state.tables.pest_map._items[key].Filenname;
             }
         }
         //return state.tables.pest_map._items.find(map => map.id == state.active.mapId);
     },
-    getCurrentPoints(state){
-        let pointsArr = [];
-        for (const point in state.tables.pest_point._items) {
-            if (state.tables.pest_point._items[point].room == state.active.mapId) {
-                pointsArr.push(state.tables.pest_point._items[point]);
+    getActiveControllItems: (state) => {
+        var controllArr = [];
+        for (const key in state.tables.pest_controll._items) {
+            if (state.tables.pest_controll._items[key].point == state.activePoint.id) {
+                controllArr.push(state.tables.pest_controll._items[key]);
             }
         }
-        return pointsArr;
-        //return state.tables.pest_point._items.filter(point => point.room == state.active.mapId);
+        return controllArr;
     }
 }

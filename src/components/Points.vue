@@ -4,7 +4,8 @@
             v-for="point in points"
             :key="point.id"
             class="point" 
-            @clicked="clickPoint($event)"
+            :class="point.class"
+            @clicked="clickPoint(point)"
             @dragstop="onDragstop($event, point)"
             :isResizable="false"  
             :isActive="isMovingActivated"
@@ -36,19 +37,29 @@ export default {
             return this.$store.state.active.movePoints;
         },
         points(){
-            return this.$store.getters.getCurrentPoints;
+            return this.$store.state.tables.pest_point._items
         },
         elWidth(){
             return this.$el.clientWidth;
         },
         elHeight(){
             return this.$el.clientHeight;
+        },
+        isControllTypeEmpty(){
+            return this.$store.state.tables.pest_controll_type._items
         }
     },
     methods:{
-		clickPoint(event) {
+		clickPoint(pointData) {
             if(!this.isMovingActivated){
-                console.log('Edit point functionality here')
+                this.$store.dispatch('setActivePoint', pointData);
+                this.$store.dispatch('activity', {
+                    name: 'editPoint',
+                    value: true
+                }); 
+                if(!this.isControllTypeEmpty){
+                    this.$store.dispatch('getRows', {table: 'pest_controll_type'});
+                }
             }
         },
         onDragstop(e, point){  

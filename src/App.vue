@@ -10,6 +10,8 @@
       	<Loading />
 		<InfoModal />
         <CreatePoint />
+        <EditPoint />
+        <HistoryModal />
 	</div>
 </template>
 
@@ -22,6 +24,8 @@ import Map from './components/Map.vue'
 import Footer from './components/Footer.vue'
 import PoupUp from './components/PoupUp.vue'
 import CreatePoint from './components/CreatePoint.vue'
+import EditPoint from './components/EditPoint.vue'
+import HistoryModal from './components/HistoryModal.vue'
 
 export default {
     name: 'PestApp',
@@ -33,7 +37,9 @@ export default {
         Map,
         Footer,
         PoupUp,
-        CreatePoint
+        CreatePoint,
+        EditPoint,
+        HistoryModal
     }
 }
 </script>
